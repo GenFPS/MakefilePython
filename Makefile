@@ -19,7 +19,6 @@ $(VENV)/Scripts/activate:	requirements.txt
 	$(PIP) install -r requirements.txt
 # Создаем файл .gitignore с символом * для добавления виртуального окружения в .gitignore
 	echo * > $(VENV)/.gitignore
-	printf "*\n.venv/\npycache/\n*.py[cod]\n*$py.class\n" > .gitignore
 
 # Определяем цель clean для очистки проекта
 clean:
