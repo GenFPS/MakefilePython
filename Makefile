@@ -14,7 +14,7 @@ run:	$(VENV)/Scripts/activate
 # Определяем цель активации виртуального окружения
 $(VENV)/Scripts/activate:	requirements.txt
 # Создаем виртуальное окружение с помощью команды venv
-	python -m .venv $(VENV)
+	python -m venv $(VENV)
 # Устанавливаем зависимости из файла requirements.txt с помощью pip
 	$(PIP) install -r requirements.txt
 
