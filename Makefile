@@ -18,7 +18,7 @@ $(VENV)/Scripts/activate:	requirements.txt
 # Устанавливаем зависимости из файла requirements.txt с помощью pip
 	$(PIP) install -r requirements.txt
 # Создаем файл .gitignore с символом * для добавления виртуального окружения в .gitignore
-	echo '*' > $(VENV)/.gitignore
+	echo * > $(VENV)/.gitignore
 
 # Определяем цель clean для очистки проекта
 clean:
