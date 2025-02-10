@@ -1,20 +1,20 @@
 # Устанавливаем переменную VENV для указания названия виртуального окружения
-VENV = venv
+VENV = .venv
 # Указываем путь до интерпретатора Python внутри виртуального окружения
-PYTHON = $(VENV)/bin/python
+PYTHON = $(VENV)/Scripts/python
 # Указываем путь до менеджера пакетов pip внутри виртуального окружения
-PIP = $(VENV)/bin/pip
+PIP = $(VENV)/Scripts/pip
 # Обозначаем цели, которые не являются файлами. Это помогает избежать путаницы
 .PHONY: run clean
 # Определяем цель run, которая зависит от файла активации виртуального окружения
-run:	$(VENV)/bin/activate
+run:	$(VENV)/Scripts/activate
 # Запускаем приложение app.py с использованием интерпретатора Python из виртуального окружения
 	$(PYTHON) main.py
 
 # Определяем цель активации виртуального окружения
-$(VENV)/bin/activate:	requirements.txt
+$(VENV)/Scripts/activate:	requirements.txt
 # Создаем виртуальное окружение с помощью команды venv
-	python -m venv $(VENV)
+	python -m .venv $(VENV)
 # Устанавливаем зависимости из файла requirements.txt с помощью pip
 	$(PIP) install -r requirements.txt
 
